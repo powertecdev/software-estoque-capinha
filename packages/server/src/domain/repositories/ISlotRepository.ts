@@ -1,0 +1,2 @@
+import { Slot } from '../entities/Slot';
+export interface ISlotRepository { findAll(): Promise<Slot[]>; findById(id: string): Promise<Slot | null>; findByLabel(label: string): Promise<Slot | null>; create(s: Slot): Promise<Slot>; update(s: Slot): Promise<Slot>; delete(id: string): Promise<void>; }

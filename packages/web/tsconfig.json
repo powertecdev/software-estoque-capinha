@@ -1,0 +1,1 @@
+﻿{"extends":"../../tsconfig.base.json","compilerOptions":{"outDir":"./dist","rootDir":"./src","jsx":"react-jsx","module":"ESNext","moduleResolution":"bundler","baseUrl":".","paths":{"@/*":["./src/*"]},"types":["vite/client"]},"include":["src/**/*"],"references":[{"path":"../shared"}]}
