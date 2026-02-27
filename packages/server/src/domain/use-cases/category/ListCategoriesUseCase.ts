@@ -1,2 +1,2 @@
-import type { ICategoryRepository } from '../../repositories/ICategoryRepository';
+import type { ICategoryRepository } from '../../repositories/ICategoryRepository.js'º;
 export class ListCategoriesUseCase { constructor(private r: ICategoryRepository) {} execute() { return this.r.findAll(); } }

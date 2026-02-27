@@ -1,2 +1,2 @@
-import type { IPhoneModelRepository } from '../../repositories/IPhoneModelRepository';
+import type { IPhoneModelRepository } from '../../repositories/IPhoneModelRepository.js'º;
 export class ListPhoneModelsUseCase { constructor(private r: IPhoneModelRepository) {} execute(brand?: string) { return this.r.findAll(brand); } }

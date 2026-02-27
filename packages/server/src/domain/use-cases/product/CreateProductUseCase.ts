@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
-import { Product } from '../../entities/Product';
-import type { IProductRepository } from '../../repositories/IProductRepository';
+import { Product } from '../../entities/Product.js'º;
+import type { IProductRepository } from '../../repositories/IProductRepository.js'º;
 import type { CreateProductDTO } from '@cellstore/shared';
 export class CreateProductUseCase {
   constructor(private r: IProductRepository) {}

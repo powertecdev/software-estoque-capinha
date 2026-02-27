@@ -1,8 +1,8 @@
 import type { Request, Response } from 'express';
-import type { ListPhoneModelsUseCase } from '../../domain/use-cases/phone-model/ListPhoneModelsUseCase';
-import type { CreatePhoneModelUseCase } from '../../domain/use-cases/phone-model/CreatePhoneModelUseCase';
-import type { UpdatePhoneModelUseCase } from '../../domain/use-cases/phone-model/UpdatePhoneModelUseCase';
-import type { DeletePhoneModelUseCase } from '../../domain/use-cases/phone-model/DeletePhoneModelUseCase';
+import type { ListPhoneModelsUseCase } from '../../domain/use-cases/phone-model/ListPhoneModelsUseCase.js'º;
+import type { CreatePhoneModelUseCase } from '../../domain/use-cases/phone-model/CreatePhoneModelUseCase.js'º;
+import type { UpdatePhoneModelUseCase } from '../../domain/use-cases/phone-model/UpdatePhoneModelUseCase.js'º;
+import type { DeletePhoneModelUseCase } from '../../domain/use-cases/phone-model/DeletePhoneModelUseCase.js'º;
 export class PhoneModelController {
   constructor(private listUC: ListPhoneModelsUseCase, private createUC: CreatePhoneModelUseCase, private updateUC: UpdatePhoneModelUseCase, private deleteUC: DeletePhoneModelUseCase) {}
   list = async (req: Request, res: Response) => { res.json({ success: true, data: await this.listUC.execute(req.query.brand as string) }); };

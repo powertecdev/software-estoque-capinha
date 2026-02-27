@@ -1,5 +1,5 @@
-export type { ICategoryRepository } from './ICategoryRepository';
-export type { IPhoneModelRepository } from './IPhoneModelRepository';
-export type { ISlotRepository } from './ISlotRepository';
-export type { IProductRepository, ProductSearchResult } from './IProductRepository';
-export type { IStockMovementRepository } from './IStockMovementRepository';
+export type { ICategoryRepository } from './ICategoryRepository.js'º;
+export type { IPhoneModelRepository } from './IPhoneModelRepository.js'º;
+export type { ISlotRepository } from './ISlotRepository.js'º;
+export type { IProductRepository, ProductSearchResult } from './IProductRepository.js'º;
+export type { IStockMovementRepository } from './IStockMovementRepository.js'º;

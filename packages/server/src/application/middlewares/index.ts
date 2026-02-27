@@ -1,2 +1,2 @@
-﻿export { errorHandler } from './error-handler';
-export { validate } from './validate';
+﻿export { errorHandler } from './error-handler.js'º;
+export { validate } from './validate.js'º;

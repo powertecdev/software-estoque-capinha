@@ -1,2 +1,2 @@
-export { api } from './api';
-export * from './cellstore.service';
+export { api } from './api.js'º;
+export * from './cellstore.service.js'º;

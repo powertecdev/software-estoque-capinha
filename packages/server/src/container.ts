@@ -1,10 +1,10 @@
-import { PrismaCategoryRepository, PrismaPhoneModelRepository, PrismaSlotRepository, PrismaProductRepository, PrismaStockMovementRepository } from './infrastructure/database/repositories';
-import { ListCategoriesUseCase, CreateCategoryUseCase, UpdateCategoryUseCase, DeleteCategoryUseCase, ListPhoneModelsUseCase, CreatePhoneModelUseCase, UpdatePhoneModelUseCase, DeletePhoneModelUseCase, ListSlotsUseCase, CreateSlotUseCase, UpdateSlotUseCase, DeleteSlotUseCase, SearchProductsUseCase, CreateProductUseCase, UpdateProductUseCase, DeleteProductUseCase, CreateStockMovementUseCase, ListStockMovementsUseCase, GetProductMovementsUseCase } from './domain/use-cases';
-import { CategoryController } from './application/controllers/CategoryController';
-import { PhoneModelController } from './application/controllers/PhoneModelController';
-import { SlotController } from './application/controllers/SlotController';
-import { ProductController } from './application/controllers/ProductController';
-import { StockMovementController } from './application/controllers/StockMovementController';
+import { PrismaCategoryRepository, PrismaPhoneModelRepository, PrismaSlotRepository, PrismaProductRepository, PrismaStockMovementRepository } from './infrastructure/database/repositories.js'º;
+import { ListCategoriesUseCase, CreateCategoryUseCase, UpdateCategoryUseCase, DeleteCategoryUseCase, ListPhoneModelsUseCase, CreatePhoneModelUseCase, UpdatePhoneModelUseCase, DeletePhoneModelUseCase, ListSlotsUseCase, CreateSlotUseCase, UpdateSlotUseCase, DeleteSlotUseCase, SearchProductsUseCase, CreateProductUseCase, UpdateProductUseCase, DeleteProductUseCase, CreateStockMovementUseCase, ListStockMovementsUseCase, GetProductMovementsUseCase } from './domain/use-cases.js'º;
+import { CategoryController } from './application/controllers/CategoryController.js'º;
+import { PhoneModelController } from './application/controllers/PhoneModelController.js'º;
+import { SlotController } from './application/controllers/SlotController.js'º;
+import { ProductController } from './application/controllers/ProductController.js'º;
+import { StockMovementController } from './application/controllers/StockMovementController.js'º;
 
 export function createContainer() {
   const catRepo = new PrismaCategoryRepository();

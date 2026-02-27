@@ -1,2 +1,2 @@
-import { Category } from '../entities/Category';
+import { Category } from '../entities/Category.js'º;
 export interface ICategoryRepository { findAll(): Promise<Category[]>; findById(id: string): Promise<Category | null>; findByName(name: string): Promise<Category | null>; create(c: Category): Promise<Category>; update(c: Category): Promise<Category>; delete(id: string): Promise<void>; }

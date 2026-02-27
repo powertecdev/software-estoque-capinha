@@ -1,4 +1,4 @@
-import { api } from './api';
+import { api } from './api.js'º;
 import type { Category, PhoneModel, Slot, ProductWithRelations, StockMovement, MovementWithProduct, ApiResponse, PaginationMeta } from '@cellstore/shared';
 
 // Categories

@@ -1,7 +1,7 @@
 import type { Request, Response } from 'express';
-import type { CreateStockMovementUseCase } from '../../domain/use-cases/stock-movement/CreateStockMovementUseCase';
-import type { ListStockMovementsUseCase } from '../../domain/use-cases/stock-movement/ListStockMovementsUseCase';
-import type { GetProductMovementsUseCase } from '../../domain/use-cases/stock-movement/GetProductMovementsUseCase';
+import type { CreateStockMovementUseCase } from '../../domain/use-cases/stock-movement/CreateStockMovementUseCase.js'º;
+import type { ListStockMovementsUseCase } from '../../domain/use-cases/stock-movement/ListStockMovementsUseCase.js'º;
+import type { GetProductMovementsUseCase } from '../../domain/use-cases/stock-movement/GetProductMovementsUseCase.js'º;
 export class StockMovementController {
   constructor(private createUC: CreateStockMovementUseCase, private listUC: ListStockMovementsUseCase, private prodMovUC: GetProductMovementsUseCase) {}
   list = async (req: Request, res: Response) => {

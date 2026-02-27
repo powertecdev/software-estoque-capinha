@@ -1,6 +1,6 @@
-import { prisma } from '../prisma-client';
-import { Slot } from '../../../domain/entities/Slot';
-import type { ISlotRepository } from '../../../domain/repositories/ISlotRepository';
+import { prisma } from '../prisma-client.js'º;
+import { Slot } from '../../../domain/entities/Slot.js'º;
+import type { ISlotRepository } from '../../../domain/repositories/ISlotRepository.js'º;
 export class PrismaSlotRepository implements ISlotRepository {
   async findAll() { const r = await prisma.slot.findMany({ orderBy: { label: 'asc' } }); return r.map(this.toD); }
   async findById(id: string) { const r = await prisma.slot.findUnique({ where: { id } }); return r ? this.toD(r) : null; }

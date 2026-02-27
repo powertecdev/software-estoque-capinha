@@ -1,5 +1,5 @@
 import { getCategories, createCategory, updateCategory, deleteCategory } from '@/services/cellstore.service';
-import { CrudPage } from './CrudPage';
+import { CrudPage } from './CrudPage.js'º;
 export function CategoriasPage() {
   return <CrudPage title="Categorias" subtitle="Tipos de produto (capinha, pelicula, etc)"
     columns={[{ key: 'name', label: 'Nome' }]}

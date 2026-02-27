@@ -1,7 +1,7 @@
 ﻿import { describe, it, expect, beforeEach } from 'vitest';
-import { CreateCategoryUseCase } from '../../src/domain/use-cases/category/CreateCategoryUseCase';
-import { Category } from '../../src/domain/entities/Category';
-import type { ICategoryRepository } from '../../src/domain/repositories/ICategoryRepository';
+import { CreateCategoryUseCase } from '../../src/domain/use-cases/category/CreateCategoryUseCase.js'º;
+import { Category } from '../../src/domain/entities/Category.js'º;
+import type { ICategoryRepository } from '../../src/domain/repositories/ICategoryRepository.js'º;
 
 class MockCategoryRepository implements ICategoryRepository {
   private categories: Category[] = [];

@@ -1,5 +1,5 @@
-export { Category } from './Category';
-export { PhoneModel } from './PhoneModel';
-export { Slot } from './Slot';
-export { Product } from './Product';
-export { StockMovement } from './StockMovement';
+export { Category } from './Category.js'º;
+export { PhoneModel } from './PhoneModel.js'º;
+export { Slot } from './Slot.js'º;
+export { Product } from './Product.js'º;
+export { StockMovement } from './StockMovement.js'º;

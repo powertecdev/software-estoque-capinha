@@ -1,2 +1,2 @@
-import { PhoneModel } from '../entities/PhoneModel';
+import { PhoneModel } from '../entities/PhoneModel.js'º;
 export interface IPhoneModelRepository { findAll(brand?: string): Promise<PhoneModel[]>; findById(id: string): Promise<PhoneModel | null>; create(p: PhoneModel): Promise<PhoneModel>; update(p: PhoneModel): Promise<PhoneModel>; delete(id: string): Promise<void>; }

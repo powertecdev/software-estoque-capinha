@@ -1,5 +1,5 @@
-export { PrismaCategoryRepository } from './PrismaCategoryRepository';
-export { PrismaPhoneModelRepository } from './PrismaPhoneModelRepository';
-export { PrismaSlotRepository } from './PrismaSlotRepository';
-export { PrismaProductRepository } from './PrismaProductRepository';
-export { PrismaStockMovementRepository } from './PrismaStockMovementRepository';
+export { PrismaCategoryRepository } from './PrismaCategoryRepository.js'º;
+export { PrismaPhoneModelRepository } from './PrismaPhoneModelRepository.js'º;
+export { PrismaSlotRepository } from './PrismaSlotRepository.js'º;
+export { PrismaProductRepository } from './PrismaProductRepository.js'º;
+export { PrismaStockMovementRepository } from './PrismaStockMovementRepository.js'º;

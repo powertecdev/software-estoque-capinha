@@ -1,8 +1,8 @@
 import type { Request, Response } from 'express';
-import type { ListCategoriesUseCase } from '../../domain/use-cases/category/ListCategoriesUseCase';
-import type { CreateCategoryUseCase } from '../../domain/use-cases/category/CreateCategoryUseCase';
-import type { UpdateCategoryUseCase } from '../../domain/use-cases/category/UpdateCategoryUseCase';
-import type { DeleteCategoryUseCase } from '../../domain/use-cases/category/DeleteCategoryUseCase';
+import type { ListCategoriesUseCase } from '../../domain/use-cases/category/ListCategoriesUseCase.js'º;
+import type { CreateCategoryUseCase } from '../../domain/use-cases/category/CreateCategoryUseCase.js'º;
+import type { UpdateCategoryUseCase } from '../../domain/use-cases/category/UpdateCategoryUseCase.js'º;
+import type { DeleteCategoryUseCase } from '../../domain/use-cases/category/DeleteCategoryUseCase.js'º;
 export class CategoryController {
   constructor(private listUC: ListCategoriesUseCase, private createUC: CreateCategoryUseCase, private updateUC: UpdateCategoryUseCase, private deleteUC: DeleteCategoryUseCase) {}
   list = async (_req: Request, res: Response) => { res.json({ success: true, data: await this.listUC.execute() }); };

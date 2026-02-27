@@ -1,6 +1,6 @@
-import { prisma } from '../prisma-client';
-import { Category } from '../../../domain/entities/Category';
-import type { ICategoryRepository } from '../../../domain/repositories/ICategoryRepository';
+import { prisma } from '../prisma-client.js'º;
+import { Category } from '../../../domain/entities/Category.js'º;
+import type { ICategoryRepository } from '../../../domain/repositories/ICategoryRepository.js'º;
 export class PrismaCategoryRepository implements ICategoryRepository {
   async findAll() { const r = await prisma.category.findMany({ orderBy: { name: 'asc' } }); return r.map(this.toD); }
   async findById(id: string) { const r = await prisma.category.findUnique({ where: { id } }); return r ? this.toD(r) : null; }

@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { createContainer } from '../../container';
-import { validate } from '../middlewares/validate';
+import { createContainer } from '../../container.js'º;
+import { validate } from '../middlewares/validate.js'º;
 import { createCategorySchema, updateCategorySchema, createPhoneModelSchema, updatePhoneModelSchema, createSlotSchema, updateSlotSchema, createProductSchema, updateProductSchema, createMovementSchema } from '@cellstore/shared';
 
 const router = Router();

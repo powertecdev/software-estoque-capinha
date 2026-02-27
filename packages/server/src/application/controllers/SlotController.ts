@@ -1,8 +1,8 @@
 import type { Request, Response } from 'express';
-import type { ListSlotsUseCase } from '../../domain/use-cases/slot/ListSlotsUseCase';
-import type { CreateSlotUseCase } from '../../domain/use-cases/slot/CreateSlotUseCase';
-import type { UpdateSlotUseCase } from '../../domain/use-cases/slot/UpdateSlotUseCase';
-import type { DeleteSlotUseCase } from '../../domain/use-cases/slot/DeleteSlotUseCase';
+import type { ListSlotsUseCase } from '../../domain/use-cases/slot/ListSlotsUseCase.js'º;
+import type { CreateSlotUseCase } from '../../domain/use-cases/slot/CreateSlotUseCase.js'º;
+import type { UpdateSlotUseCase } from '../../domain/use-cases/slot/UpdateSlotUseCase.js'º;
+import type { DeleteSlotUseCase } from '../../domain/use-cases/slot/DeleteSlotUseCase.js'º;
 export class SlotController {
   constructor(private listUC: ListSlotsUseCase, private createUC: CreateSlotUseCase, private updateUC: UpdateSlotUseCase, private deleteUC: DeleteSlotUseCase) {}
   list = async (_req: Request, res: Response) => { res.json({ success: true, data: await this.listUC.execute() }); };
