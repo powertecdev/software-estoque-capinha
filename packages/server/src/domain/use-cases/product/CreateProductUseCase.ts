@@ -1,4 +1,4 @@
-import { randomUUID } from 'crypto';
+import { randomUUID } from 'node:crypto';
 import { Product } from '../../entities/Product';
 import type { IProductRepository } from '../../repositories/IProductRepository';
 import type { CreateProductDTO } from '@cellstore/shared';

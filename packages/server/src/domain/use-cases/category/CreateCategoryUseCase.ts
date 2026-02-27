@@ -1,4 +1,4 @@
-import { randomUUID } from 'crypto';
+import { randomUUID } from 'node:crypto';
 import { Category } from '../../entities/Category';
 import type { ICategoryRepository } from '../../repositories/ICategoryRepository';
 export class CreateCategoryUseCase {

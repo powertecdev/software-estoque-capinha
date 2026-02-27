@@ -1,4 +1,4 @@
-import { randomUUID } from 'crypto';
+import { randomUUID } from 'node:crypto';
 import { PhoneModel } from '../../entities/PhoneModel';
 import type { IPhoneModelRepository } from '../../repositories/IPhoneModelRepository';
 export class CreatePhoneModelUseCase {
