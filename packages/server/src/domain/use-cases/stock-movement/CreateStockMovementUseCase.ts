@@ -1,4 +1,4 @@
-import { randomUUID } from 'node:crypto';
+import { randomUUID } from 'crypto';
 import { StockMovement } from '../../entities/StockMovement';
 import type { IStockMovementRepository } from '../../repositories/IStockMovementRepository';
 import type { IProductRepository } from '../../repositories/IProductRepository';
@@ -9,7 +9,13 @@ export class CreateStockMovementUseCase {
     const product = await this.pr.findById(d.productId);
     if (!product) throw new Error('Produto nao encontrado');
     if (d.type === 'EXIT' && product.stock < d.quantity) throw new Error('Estoque insuficiente. Disponivel: ' + product.stock);
-    const mov = StockMovement.create({ id: randomUUID(), ...d });
+    const mov = StockMovement.create({
+      id: randomUUID(),
+      productId: d.productId,
+      type: d.type,
+      quantity: d.quantity,
+      reason: d.reason,
+    });
     const created = await this.mr.create(mov);
     if (d.type === 'ENTRY') product.addStock(d.quantity); else product.removeStock(d.quantity);
     await this.pr.update(product);

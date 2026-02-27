@@ -1,4 +1,4 @@
-import { randomUUID } from 'node:crypto';
+import { randomUUID } from 'crypto';
 import { Slot } from '../../entities/Slot';
 import type { ISlotRepository } from '../../repositories/ISlotRepository';
 export class CreateSlotUseCase {
