@@ -23,7 +23,7 @@ export function EstoquePage() {
     setLoading(true);
     try {
       const r = await searchProducts({ page, limit: 20, search: search || undefined });
-      setProducts(r.products); setMeta(r.meta);
+      setProducts(r.products || []); setMeta(r.meta || { page: 1, limit: 20, total: 0, totalPages: 0 });
     } finally { setLoading(false); }
   }, [search]);
 

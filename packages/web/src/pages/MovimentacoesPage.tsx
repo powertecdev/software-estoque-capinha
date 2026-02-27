@@ -12,7 +12,7 @@ export function MovimentacoesPage() {
 
   const loadData = useCallback(async (page = 1) => {
     setLoading(true);
-    try { const r = await getMovements(page, 20); setMovements(r.movements); setMeta(r.meta); }
+    try { const r = await getMovements(page, 20); setMovements(r.movements || []); setMeta(r.meta || { page: 1, limit: 20, total: 0, totalPages: 0 }); }
     finally { setLoading(false); }
   }, []);
 

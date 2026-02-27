@@ -22,7 +22,7 @@ export function CrudPage<T extends Item>({ title, subtitle, columns, fetchAll, o
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState('');
 
-  const load = async () => { setLoading(true); try { setItems(await fetchAll()); } finally { setLoading(false); } };
+  const load = async () => { setLoading(true); try { const result = await fetchAll(); setItems(result || []); } finally { setLoading(false); } };
   useEffect(() => { load(); }, []);
 
   const openCreate = () => { setEditing(null); setFormData(Object.fromEntries(fields.map(f => [f.key, '']))); setError(''); setShowForm(true); };
