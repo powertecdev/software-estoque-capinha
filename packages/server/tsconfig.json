@@ -14,8 +14,9 @@
     "resolveJsonModule": true,
     "declaration": true,
     "sourceMap": true,
-    "types": ["node"]
+    "typeRoots": [],
+    "types": []
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "src/globals.d.ts"],
   "exclude": ["node_modules", "dist"]
 }
