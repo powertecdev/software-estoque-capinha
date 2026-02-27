@@ -1,1 +1,1 @@
-export { Pagination } from './Pagination.js'º;
+export { Pagination } from './Pagination';

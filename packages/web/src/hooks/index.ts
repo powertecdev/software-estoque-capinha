@@ -1,1 +1,1 @@
-export { useAsync } from './useAsync.js'º;
+export { useAsync } from './useAsync';

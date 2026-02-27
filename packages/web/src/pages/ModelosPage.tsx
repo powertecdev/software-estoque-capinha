@@ -1,5 +1,5 @@
 import { getPhoneModels, createPhoneModel, updatePhoneModel, deletePhoneModel } from '@/services/cellstore.service';
-import { CrudPage } from './CrudPage.js'º;
+import { CrudPage } from './CrudPage';
 export function ModelosPage() {
   return <CrudPage title="Modelos de Celular" subtitle="Cadastre os modelos disponiveis"
     columns={[{ key: 'brand', label: 'Marca' }, { key: 'name', label: 'Modelo' }]}

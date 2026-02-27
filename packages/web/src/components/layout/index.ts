@@ -1,2 +1,2 @@
-﻿export { Header } from './Header.js'º;
-export { Footer } from './Footer.js'º;
+﻿export { Header } from './Header';
+export { Footer } from './Footer';
