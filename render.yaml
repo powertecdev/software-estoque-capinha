@@ -22,5 +22,5 @@ services:
       - key: PORT
         value: "3333"
       - key: CORS_ORIGIN
-        value: https://cellstore-web.vercel.app
+        value: https://cellstore-delta.vercel.app
     healthCheckPath: /api/v1/health
