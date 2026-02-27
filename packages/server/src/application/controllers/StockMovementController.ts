@@ -9,6 +9,6 @@ export class StockMovementController {
     const { data, total } = await this.listUC.execute(page, limit);
     res.json({ success: true, data, meta: { page, limit, total, totalPages: Math.ceil(total / limit) } });
   };
-  byProduct = async (req: Request, res: Response) => { res.json({ success: true, data: await this.prodMovUC.execute(req.params.productId) }); };
+  byProduct = async (req: Request, res: Response) => { res.json({ success: true, data: await this.prodMovUC.execute(String(req.params.productId)) }); };
   create = async (req: Request, res: Response) => { res.status(201).json({ success: true, data: await this.createUC.execute(req.body) }); };
 }

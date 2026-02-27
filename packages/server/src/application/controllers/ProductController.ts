@@ -13,6 +13,6 @@ export class ProductController {
     res.json({ success: true, data, meta: { page: f.page, limit: f.limit, total, totalPages } });
   };
   create = async (req: Request, res: Response) => { res.status(201).json({ success: true, data: await this.createUC.execute(req.body) }); };
-  update = async (req: Request, res: Response) => { res.json({ success: true, data: await this.updateUC.execute(req.params.id, req.body) }); };
-  remove = async (req: Request, res: Response) => { await this.deleteUC.execute(req.params.id); res.json({ success: true, data: null }); };
+  update = async (req: Request, res: Response) => { res.json({ success: true, data: await this.updateUC.execute(String(req.params.id), req.body) }); };
+  remove = async (req: Request, res: Response) => { await this.deleteUC.execute(String(req.params.id)); res.json({ success: true, data: null }); };
 }
