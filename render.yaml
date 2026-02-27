@@ -27,7 +27,6 @@ services:
 
   - type: web
     name: cellstore-web
-    plan: free
     runtime: static
     buildCommand: npm install && cd packages/web && npx vite build
     staticPublishPath: packages/web/dist
