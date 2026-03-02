@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Plus, Trash2, Package, Pencil } from 'lucide-react';
-import { searchProducts, deleteProduct, updateProduct } from '@/services/cellstore.service';
-import type { ProductWithRelations, PaginationMeta } from '@cellstore/shared';
+import { searchProducts, deleteProduct, updateProduct, getCategories, getPhoneModels, getSlots } from '@/services/cellstore.service';
+import type { ProductWithRelations, PaginationMeta, Category, PhoneModel, Slot } from '@cellstore/shared';
 import { Button, Badge, Spinner, Modal } from '@/components/ui';
 import { Pagination } from '@/components/tables';
 import { MovementForm, ProductForm } from '@/components/forms';
@@ -11,6 +11,12 @@ export function EstoquePage() {
   const [meta, setMeta] = useState<PaginationMeta>({ page: 1, limit: 20, total: 0, totalPages: 0 });
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
+  const [filterCategory, setFilterCategory] = useState('');
+  const [filterModel, setFilterModel] = useState('');
+  const [filterSlot, setFilterSlot] = useState('');
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [phoneModels, setPhoneModels] = useState<PhoneModel[]>([]);
+  const [slots, setSlots] = useState<Slot[]>([]);
   const [showCreate, setShowCreate] = useState(false);
   const [movTarget, setMovTarget] = useState<ProductWithRelations | null>(null);
   const [editTarget, setEditTarget] = useState<ProductWithRelations | null>(null);
@@ -19,13 +25,25 @@ export function EstoquePage() {
   const [editSaving, setEditSaving] = useState(false);
   const [editError, setEditError] = useState('');
 
+  useEffect(() => {
+    getCategories().then(r => setCategories(r || []));
+    getPhoneModels().then(r => setPhoneModels(r || []));
+    getSlots().then(r => setSlots(r || []));
+  }, []);
+
   const loadData = useCallback(async (page = 1) => {
     setLoading(true);
     try {
-      const r = await searchProducts({ page, limit: 20, search: search || undefined });
+      const r = await searchProducts({
+        page, limit: 20,
+        search: search || undefined,
+        categoryId: filterCategory || undefined,
+        phoneModelId: filterModel || undefined,
+        slotId: filterSlot || undefined,
+      });
       setProducts(r.products || []); setMeta(r.meta || { page: 1, limit: 20, total: 0, totalPages: 0 });
     } finally { setLoading(false); }
-  }, [search]);
+  }, [search, filterCategory, filterModel, filterSlot]);
 
   useEffect(() => { loadData(); }, [loadData]);
 
@@ -44,6 +62,11 @@ export function EstoquePage() {
     finally { setEditSaving(false); }
   };
 
+  const clearFilters = () => { setSearch(''); setFilterCategory(''); setFilterModel(''); setFilterSlot(''); };
+  const hasFilters = search || filterCategory || filterModel || filterSlot;
+
+  const brands = [...new Set(phoneModels.map(p => p.brand))];
+  const selectCls = "px-3 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500";
   const inputCls = "w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500";
 
   return (
@@ -53,9 +76,28 @@ export function EstoquePage() {
         <Button onClick={() => setShowCreate(true)}><Plus className="h-4 w-4" /> Novo Produto</Button>
       </div>
 
-      <div className="mb-4">
-        <input type="text" value={search} onChange={e => setSearch(e.target.value)} onKeyDown={e => e.key === 'Enter' && loadData()}
-          placeholder="Buscar por nome, modelo, marca, tipo..." className={inputCls + " max-w-md"} />
+      <div className="bg-white rounded-2xl border border-gray-200 p-4 mb-4 space-y-3">
+        <div className="flex gap-3 flex-wrap">
+          <input type="text" value={search} onChange={e => setSearch(e.target.value)}
+            onKeyDown={e => e.key === 'Enter' && loadData()}
+            placeholder="Buscar por nome, marca..."
+            className={selectCls + " flex-1 min-w-[200px]"} />
+          <select value={filterCategory} onChange={e => setFilterCategory(e.target.value)} className={selectCls}>
+            <option value="">Todas categorias</option>
+            {categories.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
+          </select>
+          <select value={filterModel} onChange={e => setFilterModel(e.target.value)} className={selectCls}>
+            <option value="">Todos modelos</option>
+            {brands.map(b => <optgroup key={b} label={b}>{phoneModels.filter(p => p.brand === b).map(p => <option key={p.id} value={p.id}>{p.name}</option>)}</optgroup>)}
+          </select>
+          <select value={filterSlot} onChange={e => setFilterSlot(e.target.value)} className={selectCls}>
+            <option value="">Todos ganchos</option>
+            {slots.map(s => <option key={s.id} value={s.id}>{s.label}</option>)}
+          </select>
+        </div>
+        {hasFilters && (
+          <button onClick={clearFilters} className="text-xs text-brand-600 hover:underline">Limpar filtros</button>
+        )}
       </div>
 
       {loading ? <div className="flex justify-center py-20"><Spinner size="lg" /></div> : (
