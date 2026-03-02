@@ -9,7 +9,7 @@ services:
     name: cellstore-api
     plan: free
     runtime: node
-    buildCommand: NODE_ENV=development npm install && cd packages/shared && npx tsc && cd ../server && npx prisma generate && npx tsc
+    buildCommand: NODE_ENV=development npm install && cd packages/shared && rm -rf dist && npx tsc && cd ../server && npx prisma generate && npx tsc
     startCommand: cd packages/server && npx prisma migrate deploy && node dist/server.js
     rootDir: .
     envVars:
