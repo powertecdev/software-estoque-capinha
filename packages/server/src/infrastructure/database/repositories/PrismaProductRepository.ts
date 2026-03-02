@@ -1,7 +1,7 @@
 import { Prisma } from '@prisma/client';
-import { prisma } from '../prisma-client.js'º;
-import { Product } from '../../../domain/entities/Product.js'º;
-import type { IProductRepository, ProductSearchResult } from '../../../domain/repositories/IProductRepository.js'º;
+import { prisma } from '../prisma-client';
+import { Product } from '../../../domain/entities/Product';
+import type { IProductRepository, ProductSearchResult } from '../../../domain/repositories/IProductRepository';
 import type { SearchProductsDTO, ProductWithRelations } from '@cellstore/shared';
 export class PrismaProductRepository implements IProductRepository {
   async findById(id: string) { const r = await prisma.product.findUnique({ where: { id } }); return r ? this.toD(r) : null; }

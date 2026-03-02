@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto';
-import { StockMovement } from '../../entities/StockMovement.js'º;
-import type { IStockMovementRepository } from '../../repositories/IStockMovementRepository.js'º;
-import type { IProductRepository } from '../../repositories/IProductRepository.js'º;
+import { StockMovement } from '../../entities/StockMovement';
+import type { IStockMovementRepository } from '../../repositories/IStockMovementRepository';
+import type { IProductRepository } from '../../repositories/IProductRepository';
 import type { CreateMovementDTO } from '@cellstore/shared';
 export class CreateStockMovementUseCase {
   constructor(private mr: IStockMovementRepository, private pr: IProductRepository) {}

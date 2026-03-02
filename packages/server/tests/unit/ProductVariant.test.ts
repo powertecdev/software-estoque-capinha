@@ -1,5 +1,5 @@
 ﻿import { describe, it, expect } from 'vitest';
-import { ProductVariant } from '../../src/domain/entities/ProductVariant.js'º;
+import { ProductVariant } from '../../src/domain/entities/ProductVariant';
 
 describe('ProductVariant Entity', () => {
   const createVariant = () =>

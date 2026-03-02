@@ -1,6 +1,6 @@
-import { prisma } from '../prisma-client.js'º;
-import { StockMovement } from '../../../domain/entities/StockMovement.js'º;
-import type { IStockMovementRepository } from '../../../domain/repositories/IStockMovementRepository.js'º;
+import { prisma } from '../prisma-client';
+import { StockMovement } from '../../../domain/entities/StockMovement';
+import type { IStockMovementRepository } from '../../../domain/repositories/IStockMovementRepository';
 import type { MovementWithProduct } from '@cellstore/shared';
 export class PrismaStockMovementRepository implements IStockMovementRepository {
   async create(m: StockMovement) { const r = await prisma.stockMovement.create({ data: { id: m.id, productId: m.productId, type: m.type, quantity: m.quantity, reason: m.reason } }); return new StockMovement(r.id, r.productId, r.type, r.quantity, r.reason, r.createdAt); }

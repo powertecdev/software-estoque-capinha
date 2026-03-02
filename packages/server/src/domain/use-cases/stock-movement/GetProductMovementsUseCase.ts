@@ -1,2 +1,2 @@
-import type { IStockMovementRepository } from '../../repositories/IStockMovementRepository.js'º;
+import type { IStockMovementRepository } from '../../repositories/IStockMovementRepository';
 export class GetProductMovementsUseCase { constructor(private r: IStockMovementRepository) {} execute(productId: string) { return this.r.findByProductId(productId); } }

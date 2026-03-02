@@ -1,2 +1,2 @@
-import type { IStockMovementRepository } from '../../repositories/IStockMovementRepository.js'º;
+import type { IStockMovementRepository } from '../../repositories/IStockMovementRepository';
 export class ListStockMovementsUseCase { constructor(private r: IStockMovementRepository) {} execute(page = 1, limit = 20) { return this.r.findAll(page, limit); } }
